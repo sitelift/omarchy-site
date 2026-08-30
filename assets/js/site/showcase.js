@@ -10,9 +10,24 @@ function wire(showcase) {
 
   if (!image || thumbs.length === 0) return;
 
+  function applyAccent(accent) {
+    if (!accent) return;
+
+    const match = accent.trim().match(/^#([0-9a-f]{6})$/i);
+    if (!match) return;
+
+    const value = parseInt(match[1], 16);
+    const rgb = `${(value >> 16) & 255}, ${(value >> 8) & 255}, ${value & 255}`;
+    const root = document.documentElement.style;
+
+    root.setProperty('--color-terminal-blue', accent);
+    root.setProperty('--rgb-terminal-blue', rgb);
+  }
+
   function select(thumb) {
     thumbs.forEach((other) => other.setAttribute('aria-pressed', String(other === thumb)));
 
+    applyAccent(thumb.dataset.accent);
     image.src = thumb.dataset.src;
     image.alt = `${thumb.dataset.name} theme`;
 

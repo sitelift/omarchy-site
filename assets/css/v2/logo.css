@@ -2,8 +2,9 @@
    as the layout size and as the no-JS / no-WASM fallback, exactly like the
    upstream .pre system — just scoped to the hero markup. */
 
-.hero__mark a {
+a.hero__mark {
   display: block;
+  position: relative;
   max-width: 100%;
   position: relative;
   width: max-content;

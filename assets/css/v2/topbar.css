@@ -1,5 +1,5 @@
 .topbar {
-  background: rgb(var(--rgb-background-night) / 0.86);
+  background: rgb(var(--rgb-background-night) / 0.9);
   backdrop-filter: blur(0.75em);
   border-bottom: var(--border-width) solid var(--border-color);
   position: sticky;
@@ -23,21 +23,15 @@
   flex-shrink: 0;
   font-size: var(--font-size-small);
   font-weight: 700;
-  gap: 0.7em;
+  gap: 0.55em;
   letter-spacing: 0.14em;
   text-decoration: none;
 }
 
-.topbar__mark {
-  color: var(--color-green);
-  height: 1.4em;
-  width: 1.4em;
-}
-
-.topbar__mark svg {
-  display: block;
-  height: 100%;
-  width: 100%;
+.topbar__brand svg {
+  color: var(--color-terminal-blue);
+  height: 1.3em;
+  width: 1.3em;
 }
 
 .topbar__links {

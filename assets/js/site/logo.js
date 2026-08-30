@@ -113,7 +113,7 @@ function ready() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!document.documentElement.classList.contains('wte-home')) return;
 
-  const pre = document.querySelector('.hero__mark a pre');
+  const pre = document.querySelector('a.hero__mark pre, .hero__mark a pre');
   const link = pre?.parentElement;
   const host = document.querySelector('.hero__mark');
   if (!(pre instanceof HTMLPreElement) || link == null || host == null) return;

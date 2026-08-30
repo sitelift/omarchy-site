@@ -1,15 +1,25 @@
 :root {
 
-  --rgb-background-night: 26, 27, 38;
-  --rgb-background-storm: 36, 40, 59;
-  --rgb-black: 0, 0, 0;
+  /* Light "house" canvas. Names kept from the Tokyo Night era so every
+     component keeps working; the values now describe paper and ink.
+     --rgb-terminal-* are the light-page roles: black = border, blue =
+     accent, cyan = link, white = ink. The --rgb-panel-* set describes the
+     dark terminal windows that sit on the page like product shots. */
+  --rgb-background-night: 250, 250, 247;
+  --rgb-background-storm: 255, 255, 255;
+  --rgb-black: 24, 26, 32;
   --rgb-green: 158, 206, 106;
-  --rgb-terminal-black: 65, 72, 104;
-  --rgb-terminal-blue: 122, 162, 247;
-  --rgb-terminal-cyan: 125, 207, 255;
-  --rgb-terminal-white: 192, 202, 245;
-  --rgb-turquoise: 180, 249, 248;
+  --rgb-terminal-black: 226, 225, 216;
+  --rgb-terminal-blue: 85, 124, 42;
+  --rgb-terminal-cyan: 85, 124, 42;
+  --rgb-terminal-white: 30, 34, 41;
+  --rgb-turquoise: 60, 90, 28;
   --rgb-white: 255, 255, 255;
+
+  --rgb-panel-white: 192, 202, 245;
+  --rgb-panel-accent: 122, 162, 247;
+  --rgb-panel-green: 158, 206, 106;
+  --rgb-panel-cyan: 125, 207, 255;
 
   --color-background-night: rgb(var(--rgb-background-night));
   --color-background-storm: rgb(var(--rgb-background-storm));
@@ -29,12 +39,13 @@
   --border-width: max(1px, 0.0625em);
 
   --font-family: 'JetBrains Mono', monospace;
-  --font-size: clamp(0.625rem, 1.125vw, 0.9rem);
+  --font-family-editorial: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size: clamp(0.875rem, 1.05vw, 1rem);
   --font-size-small: 80%;
   --font-size-medium: 125%;
   --font-size-large: 200%;
 
-  --line-height: 1.4;
+  --line-height: 1.55;
 
   --space-small: 0.5em;
   --space-medium: 1em;
@@ -47,6 +58,11 @@
 
   --width-page: 90em;
   --width-text: 46em;
+
+  --shadow-calm:
+    0 0.15em 0.6em -0.2em rgba(var(--rgb-black), 0.12),
+    0 0.5em 1.6em -0.8em rgba(var(--rgb-black), 0.14)
+  ;
 
   --shadow-raised:
     0 1px 0 0 rgba(var(--rgb-black), 0.1),

@@ -39,26 +39,67 @@
 }
 
 .terminal {
-  background: rgb(var(--rgb-black) / 0.35);
+  background: rgb(var(--rgb-black) / 0.92);
   border: var(--border-width) solid var(--border-color);
-  border-radius: 0.4em;
-  color: var(--color-terminal-white);
+  border-radius: 0.5em;
   font-size: var(--font-size-small);
-  line-height: 1.8;
   margin-top: var(--space-medium);
+  overflow: hidden;
+}
+
+.terminal__bar {
+  align-items: center;
+  background: rgb(var(--rgb-black) / 0.25);
+  border-bottom: var(--border-width) solid rgb(var(--rgb-panel-white) / 0.1);
+  display: flex;
+  gap: 0.45em;
+  padding: 0.6em 0.9em;
+}
+
+.terminal__dot {
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 0.7em;
+  width: 0.7em;
+}
+
+.terminal__dot--red {
+  background: rgb(255, 96, 88);
+}
+
+.terminal__dot--yellow {
+  background: rgb(255, 189, 46);
+}
+
+.terminal__dot--green {
+  background: var(--color-green);
+}
+
+.terminal__title {
+  color: rgb(var(--rgb-panel-white) / 0.45);
+  margin-inline: auto;
+  user-select: none;
+}
+
+.terminal__body {
+  line-height: 1.8;
   overflow-x: auto;
   padding: var(--space-small) var(--space-medium);
 }
 
 .terminal .prompt {
-  color: var(--color-terminal-blue);
+  color: rgb(var(--rgb-panel-accent));
   user-select: none;
 }
 
 .terminal .command {
-  color: var(--color-green);
+  color: rgb(var(--rgb-panel-green));
 }
 
 .terminal .flag {
-  color: var(--color-terminal-cyan);
+  color: rgb(var(--rgb-panel-cyan));
+}
+
+.terminal__out {
+  color: rgb(var(--rgb-panel-white) / 0.5);
 }

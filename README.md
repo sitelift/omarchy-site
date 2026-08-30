@@ -1,3 +1,23 @@
+# Omarchy site redesign
+
+A proposed redesign of [omarchy.org](https://omarchy.org), built on top of the
+upstream [omacom/omarchy-site](https://github.com/omacom/omarchy-site) base —
+same Tokyo Night soul, same JetBrains Mono, same animated ASCII mark, but a
+homepage that finally tells the story:
+
+- **Preview:** [omarchy.sitelift.net](https://omarchy.sitelift.net)
+- **New homepage:** hero, what-it-is, feature grid, plugin competition winners,
+  interactive theme showcase, agentic OS, video tour, honest pitch, install
+  steps, community, FAQ
+- **New videos page:** all 15 community videos in scroll rails
+- **New themes page:** all 145 community themes with a lightbox and repo links
+- Redesign CSS/JS is namespaced under `assets/css/v2/` and `assets/js/site.js`,
+  so every upstream page (manual, news, patrons, ...) works untouched
+
+Everything else below is upstream documentation.
+
+---
+
 # Omarchy
 
 Beautiful, Fun & Opinionated Linux by DHH.

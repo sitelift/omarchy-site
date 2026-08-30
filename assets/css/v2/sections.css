@@ -118,6 +118,10 @@
   text-decoration: none;
 }
 
+.card--wide {
+  grid-column: 1 / -1;
+}
+
 .card--link .card__go {
   color: var(--color-terminal-blue);
   font-size: var(--font-size-small);

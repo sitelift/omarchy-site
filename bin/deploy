@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Deploys the site to a subdomain docroot over SSH.
+#
+#   bin/deploy user@your-vps            # /var/www/omarchy on a VPS
+#   bin/deploy user@host ~/public_html  # Hostinger shared, if it has SSH
+#
+# Expects the subdomain's document root to exist and be empty-ish; the
+# script rsyncs this repo into it (minus git and build tooling).
+
+set -euo pipefail
+
+DEST="${1:?usage: bin/deploy user@host[:/path]}"
+ROOT="${2:-/var/www/omarchy}"
+
+ssh "$DEST" "mkdir -p '$ROOT'"
+
+rsync -avz --delete \
+  --exclude '.git/' \
+  --exclude '.github/' \
+  --exclude 'bin/' \
+  --exclude 'content/' \
+  --exclude 'templates/' \
+  --exclude 'CNAME' \
+  ./ "$DEST:$ROOT/"
+
+echo
+echo "Deployed to $DEST:$ROOT"
+echo "DNS: point an A record for omarchy.sitelift.net at the host's IP"
+echo "     (or a CNAME at the hostname for shared hosting), then enable HTTPS."

@@ -30,8 +30,14 @@
 
 .topbar__mark {
   color: var(--color-green);
-  font-size: 1.5em;
-  line-height: 1;
+  height: 1.4em;
+  width: 1.4em;
+}
+
+.topbar__mark svg {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .topbar__links {

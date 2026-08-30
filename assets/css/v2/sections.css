@@ -1,0 +1,247 @@
+.wrap {
+  margin-inline: auto;
+  padding-inline: var(--space-large);
+  width: min(100%, var(--width-page));
+}
+
+.section {
+  border-top: var(--border-width) solid rgb(var(--rgb-terminal-black) / 0.45);
+  padding-block: var(--space-xx-large);
+}
+
+.section--tight {
+  padding-block: var(--space-x-large);
+}
+
+.section--flush {
+  border-top: none;
+}
+
+.section__head {
+  margin-bottom: var(--space-x-large);
+  max-width: var(--width-text);
+}
+
+.section__head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section__head h1 {
+  font-size: clamp(1.4em, 2.4vw, 1.9em);
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.kicker {
+  color: var(--color-green);
+  display: block;
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  margin-bottom: var(--space-small);
+}
+
+.section__head h2 {
+  font-size: clamp(1.4em, 2.4vw, 1.9em);
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.section__lede {
+  color: var(--color-muted);
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-top: var(--space-medium);
+  text-wrap: pretty;
+}
+
+.section__lede a {
+  font-weight: 500;
+}
+
+.section__more {
+  display: inline-block;
+  margin-top: var(--space-large);
+}
+
+.cards {
+  display: grid;
+  gap: var(--space-medium);
+  grid-template-columns: repeat(auto-fill, minmax(21em, 1fr));
+}
+
+.card {
+  background: var(--color-background-storm);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0.4em;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-large);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  border-color: rgb(var(--rgb-terminal-blue) / 0.9);
+}
+
+.card__index {
+  color: var(--color-terminal-blue);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.card h3 {
+  color: var(--color-terminal-white);
+  font-size: 1.05em;
+  font-weight: 700;
+  margin-top: var(--space-small);
+}
+
+.card p {
+  color: var(--color-muted);
+  font-size: 0.95em;
+  line-height: 1.65;
+  margin-top: var(--space-small);
+}
+
+.card p a {
+  font-weight: 500;
+}
+
+.card--link {
+  color: inherit;
+  gap: var(--space-medium);
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.card--link .card__go {
+  color: var(--color-terminal-blue);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: color var(--transition);
+}
+
+.card--link:hover .card__go {
+  color: var(--color-turquoise);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-small);
+  justify-content: center;
+}
+
+.chip {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 99em;
+  color: var(--color-muted);
+  font-size: var(--font-size-small);
+  padding: 0.35em 1em;
+}
+
+.chip b {
+  color: var(--color-terminal-white);
+  font-weight: 500;
+}
+
+
+
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(0.9em);
+  transition:
+    opacity 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+    transform 0.5s cubic-bezier(0.33, 1, 0.68, 1)
+  ;
+}
+
+html.js [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+
+
+@media(prefers-reduced-motion: reduce) {
+
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+}
+
+
+
+@media(min-width: 64em) {
+
+  .wrap {
+    padding-inline: var(--space-xx-large);
+  }
+
+  .section {
+    padding-block: var(--space-xxx-large);
+  }
+
+  .section--tight {
+    padding-block: var(--space-xx-large);
+  }
+
+}
+
+
+.pitch {
+  display: grid;
+  gap: var(--space-medium);
+  grid-template-columns: repeat(auto-fit, minmax(19em, 1fr));
+}
+
+.pitch__col {
+  background: var(--color-background-storm);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0.4em;
+  padding: var(--space-neutral);
+}
+
+.pitch__col h3 {
+  color: var(--color-terminal-white);
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: var(--space-medium);
+}
+
+.pitch__list {
+  display: grid;
+  gap: 0.8em;
+}
+
+.pitch__list li {
+  color: var(--color-muted);
+  display: flex;
+  font-size: 0.9em;
+  gap: 0.8em;
+  line-height: 1.55;
+}
+
+.pitch__list li::before {
+  color: var(--color-green);
+  content: '+';
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.pitch__col--no .pitch__list li::before {
+  color: var(--color-terminal-blue);
+  content: '\2212';
+}

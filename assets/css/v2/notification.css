@@ -1,0 +1,11 @@
+.notification {
+  background: var(--color-background-storm);
+  font-size: var(--font-size-small);
+  line-height: 1.6;
+  padding: var(--space-small) var(--space-large);
+  text-align: center;
+}
+
+.notification a {
+  font-weight: 500;
+}

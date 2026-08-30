@@ -1,0 +1,59 @@
+/* The animated laseretch canvas plays over the static ASCII pre. The pre stays
+   as the layout size and as the no-JS / no-WASM fallback, exactly like the
+   upstream .pre system — just scoped to the hero markup. */
+
+.hero__mark a {
+  display: block;
+  max-width: 100%;
+  position: relative;
+  width: max-content;
+}
+
+html.wte-home .hero__mark pre {
+  animation: v2-fallback 0s 2s forwards;
+  visibility: hidden;
+}
+
+@keyframes v2-fallback {
+  to {
+    visibility: visible;
+  }
+}
+
+html.wte-home .hero__mark.hero__mark--live pre {
+  animation: none;
+}
+
+html.wte-home .hero__mark .pre__wte {
+  display: block;
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+html.wte-home .hero__mark .pre__wte canvas {
+  display: block;
+  mix-blend-mode: screen;
+  position: absolute;
+  transform-origin: 0 0;
+}
+
+html.wte-home .hero__mark.hero__mark--static pre {
+  visibility: visible;
+}
+
+html.wte-home .hero__mark.hero__mark--static .pre__wte {
+  display: none;
+}
+
+@media(prefers-reduced-motion: reduce) {
+
+  html.wte-home .hero__mark pre {
+    visibility: visible;
+  }
+
+  html.wte-home .hero__mark .pre__wte {
+    display: none;
+  }
+
+}

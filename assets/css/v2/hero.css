@@ -1,0 +1,95 @@
+.hero {
+  display: grid;
+  gap: var(--space-large);
+  justify-items: center;
+  padding-block: var(--space-x-large) var(--space-xx-large);
+  text-align: center;
+}
+
+.hero__mark {
+  display: grid;
+  justify-items: center;
+}
+
+.hero__mark a {
+  color: var(--color-green);
+  font-weight: normal;
+  justify-self: center;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.hero__mark pre {
+  color: inherit;
+  font-size: clamp(0.425rem, 1.25vw, 1rem);
+  justify-self: center;
+  letter-spacing: -0.0425em;
+  line-height: 1.09375;
+  white-space: pre;
+}
+
+.hero h1 {
+  color: var(--color-terminal-blue);
+  font-size: clamp(1.4em, 2.6vw, 2.1em);
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 22em;
+  text-wrap: balance;
+}
+
+.hero h1 a {
+  color: inherit;
+}
+
+.hero__lede {
+  color: var(--color-muted);
+  font-size: 1.1em;
+  line-height: 1.7;
+  max-width: var(--width-text);
+  text-wrap: pretty;
+}
+
+.hero__lede strong {
+  color: var(--color-terminal-white);
+  font-weight: 500;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-medium);
+  justify-content: center;
+}
+
+.hero__meta {
+  color: var(--color-faint);
+  font-size: var(--font-size-small);
+}
+
+.hero__meta span {
+  padding-inline: 0.6em;
+}
+
+
+
+@media(hover: hover) {
+
+  .hero__mark a:hover {
+    color: var(--color-turquoise);
+  }
+
+  .hero h1 a:hover {
+    color: var(--color-terminal-cyan);
+  }
+
+}
+
+
+
+@media(min-width: 64em) {
+
+  .hero {
+    padding-block: var(--space-xx-large) var(--space-xxx-large);
+  }
+
+}

@@ -1,0 +1,64 @@
+.steps {
+  display: grid;
+  gap: var(--space-medium);
+  grid-template-columns: repeat(auto-fit, minmax(15.5em, 1fr));
+}
+
+.step {
+  background: var(--color-background-storm);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0.4em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-small);
+  padding: var(--space-neutral);
+}
+
+.step__number {
+  color: var(--color-terminal-blue);
+  font-size: 1.7em;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.step h3 {
+  color: var(--color-terminal-white);
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.step p {
+  color: var(--color-muted);
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.step p a {
+  font-weight: 500;
+}
+
+.terminal {
+  background: rgb(var(--rgb-black) / 0.35);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0.4em;
+  color: var(--color-terminal-white);
+  font-size: var(--font-size-small);
+  line-height: 1.8;
+  margin-top: var(--space-medium);
+  overflow-x: auto;
+  padding: var(--space-small) var(--space-medium);
+}
+
+.terminal .prompt {
+  color: var(--color-terminal-blue);
+  user-select: none;
+}
+
+.terminal .command {
+  color: var(--color-green);
+}
+
+.terminal .flag {
+  color: var(--color-terminal-cyan);
+}

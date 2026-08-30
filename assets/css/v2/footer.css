@@ -1,0 +1,116 @@
+.footer {
+  border-top: var(--border-width) solid var(--border-color);
+  margin-top: auto;
+  padding-block: var(--space-xx-large) var(--space-large);
+}
+
+.footer__grid {
+  display: grid;
+  gap: var(--space-x-large) var(--space-large);
+  grid-template-columns: repeat(auto-fit, minmax(11em, 1fr));
+  margin-inline: auto;
+  padding-inline: var(--space-large);
+  width: min(100%, var(--width-page));
+}
+
+.footer__group h2 {
+  color: var(--color-faint);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer__list {
+  display: grid;
+  gap: 0.7em;
+  margin-top: var(--space-medium);
+}
+
+.footer__list a {
+  color: var(--color-muted);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer__bottom {
+  color: var(--color-faint);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--font-size-small);
+  gap: var(--space-small) var(--space-large);
+  justify-content: space-between;
+  line-height: 1.8;
+  margin-inline: auto;
+  margin-top: var(--space-xx-large);
+  padding-inline: var(--space-large);
+  text-align: center;
+  width: min(100%, var(--width-page));
+}
+
+.footer__icon {
+  color: inherit;
+  display: inline-block;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.footer__icon svg {
+  display: inline-block;
+  height: 1.2em;
+  max-height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  vertical-align: -0.2125em;
+  width: auto;
+}
+
+.footer__icon strong {
+  display: inline-block;
+  font-weight: inherit;
+  margin-left: -0.3em;
+}
+
+.footer__icon--37signals strong {
+  margin-left: -0.375em;
+}
+
+.footer__icon--hey svg {
+  height: 1.4em;
+  vertical-align: -0.3em;
+}
+
+.footer__icon--cloudflare svg {
+  height: 1.675em;
+  vertical-align: -0.0875em;
+}
+
+.footer__icon:hover {
+  color: inherit;
+}
+
+.footer__icon svg,
+.footer__icon strong {
+  transition: color var(--transition);
+}
+
+.footer__icon:hover svg,
+.footer__icon:hover strong {
+  color: var(--color-white);
+}
+
+
+
+@media(min-width: 64em) {
+
+  .footer__grid,
+  .footer__bottom {
+    padding-inline: var(--space-xx-large);
+  }
+
+  .footer__bottom {
+    text-align: left;
+  }
+
+}

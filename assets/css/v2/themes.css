@@ -1,0 +1,90 @@
+.themes-grid {
+  display: grid;
+  gap: var(--space-medium);
+  grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
+}
+
+.theme-card {
+  background: var(--color-background-storm);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0.4em;
+  cursor: zoom-in;
+  overflow: hidden;
+  padding: 0;
+  transition: border-color var(--transition);
+}
+
+.theme-card img {
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.theme-card__name {
+  color: var(--color-terminal-white);
+  display: flex;
+  font-size: 0.85em;
+  font-weight: 500;
+  justify-content: space-between;
+  padding: var(--space-small) var(--space-small);
+}
+
+.theme-card__name span {
+  color: var(--color-faint);
+  font-weight: 400;
+}
+
+.theme-card:hover {
+  border-color: rgb(var(--rgb-terminal-blue) / 0.9);
+}
+
+.theme-card:focus-visible {
+  border-color: var(--color-terminal-cyan);
+  outline: none;
+}
+
+.lightbox {
+  background: rgb(var(--rgb-background-night) / 0.96);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0.4em;
+  color: var(--color-terminal-white);
+  margin: auto;
+  max-width: min(90em, 94vw);
+  padding: var(--space-medium);
+  width: 100%;
+}
+
+.lightbox::backdrop {
+  background: rgb(var(--rgb-black) / 0.72);
+}
+
+.lightbox img {
+  border-radius: 0.3em;
+  width: 100%;
+}
+
+.lightbox__caption {
+  color: var(--color-muted);
+  font-size: var(--font-size-small);
+  margin-top: var(--space-medium);
+  text-align: center;
+}
+
+
+.themes__cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.themes__repo {
+  color: var(--color-faint);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.themes__repo:hover {
+  color: var(--color-terminal-cyan);
+}

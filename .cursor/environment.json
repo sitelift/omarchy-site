@@ -1,0 +1,17 @@
+{
+  "name": "Omarchy site (static, Ruby serve)",
+  "install": "sudo apt-get update -qq && sudo apt-get install -y -qq ruby-full",
+  "terminals": [
+    {
+      "name": "serve",
+      "command": "ruby bin/serve 8931",
+      "description": "Serves the static site with clean URLs on http://localhost:8931 (matches AGENTS.md dev workflow)."
+    }
+  ],
+  "ports": [
+    {
+      "name": "site",
+      "port": 8931
+    }
+  ]
+}

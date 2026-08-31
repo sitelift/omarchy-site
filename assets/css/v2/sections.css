@@ -327,11 +327,15 @@ html.js [data-reveal].is-revealed {
 }
 
 .terminal {
+  background: var(--color-terminal-bg);
+  border: var(--border-width) solid rgb(var(--rgb-panel-white) / 0.1);
+  border-radius: 0.55em;
   color: rgb(var(--rgb-panel-white));
+  overflow: hidden;
 }
 
 .terminal__bar {
-  background: rgb(var(--rgb-black) / 0.25);
+  background: rgb(24 26 32 / 0.35);
   border-bottom: var(--border-width) solid rgb(var(--rgb-panel-white) / 0.1);
 }
 

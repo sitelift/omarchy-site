@@ -39,7 +39,7 @@
 }
 
 .terminal {
-  background: rgb(var(--rgb-black) / 0.92);
+  background: var(--color-terminal-bg);
   border: var(--border-width) solid var(--border-color);
   border-radius: 0.5em;
   font-size: var(--font-size-small);
@@ -49,7 +49,7 @@
 
 .terminal__bar {
   align-items: center;
-  background: rgb(var(--rgb-black) / 0.25);
+  background: rgb(24 26 32 / 0.35);
   border-bottom: var(--border-width) solid rgb(var(--rgb-panel-white) / 0.1);
   display: flex;
   gap: 0.45em;

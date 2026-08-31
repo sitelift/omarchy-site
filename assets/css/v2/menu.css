@@ -1,0 +1,236 @@
+/* Omarchy menu — dark Tokyo Night command palette over the light page.
+   Mirrors the real Super+Space surface: centered panel, type-to-filter,
+   nested rows with icon + label. Site destinations only. */
+
+.omenu {
+  background: transparent;
+  border: 0;
+  color: rgb(var(--rgb-panel-white));
+  height: 100%;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  padding: 0;
+  width: 100%;
+}
+
+.omenu::backdrop {
+  background: rgb(24 26 32 / 0.55);
+  backdrop-filter: blur(0.35em);
+}
+
+.omenu__shell {
+  display: grid;
+  inset: 0;
+  min-height: 100%;
+  place-items: start center;
+  padding: clamp(4.5em, 12vh, 8em) var(--space-medium) var(--space-x-large);
+}
+
+.omenu__panel {
+  background: var(--color-terminal-bg);
+  border: var(--border-width) solid rgb(var(--rgb-panel-white) / 0.12);
+  border-radius: 0.65em;
+  box-shadow:
+    0 0.5em 2em -0.4em rgb(0 0 0 / 0.55),
+    0 0 0 1px rgb(0 0 0 / 0.35)
+  ;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  max-height: min(32em, calc(100vh - 7em));
+  max-height: min(32em, calc(100dvh - 7em));
+  overflow: hidden;
+  width: min(100%, 26em);
+}
+
+.omenu__search {
+  align-items: center;
+  border-bottom: var(--border-width) solid rgb(var(--rgb-panel-white) / 0.1);
+  display: flex;
+  gap: 0.55em;
+  padding: 0.7em 0.85em;
+}
+
+.omenu__search-prompt {
+  color: rgb(var(--rgb-panel-green));
+  flex-shrink: 0;
+  font-size: 0.95em;
+  user-select: none;
+}
+
+.omenu__input {
+  background: transparent;
+  border: 0;
+  caret-color: rgb(var(--rgb-panel-accent));
+  color: rgb(var(--rgb-panel-white));
+  flex: 1;
+  font: inherit;
+  font-size: 0.95em;
+  min-width: 0;
+  outline: none;
+  padding: 0;
+}
+
+.omenu__input::placeholder {
+  color: rgb(var(--rgb-panel-white) / 0.35);
+}
+
+.omenu__hint {
+  color: rgb(var(--rgb-panel-white) / 0.28);
+  flex-shrink: 0;
+  font-size: 0.72em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.omenu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  list-style: none;
+  margin: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.35em;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--rgb-panel-white) / 0.2) transparent;
+}
+
+.omenu__item {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0.4em;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 0.7em;
+  padding: 0.55em 0.65em;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    background var(--transition),
+    color var(--transition)
+  ;
+  width: 100%;
+}
+
+.omenu__item.is-active,
+.omenu__item:focus-visible {
+  background: rgb(var(--rgb-panel-accent) / 0.18);
+  color: rgb(var(--rgb-panel-white));
+  outline: none;
+}
+
+.omenu__icon {
+  color: rgb(var(--rgb-panel-accent));
+  display: grid;
+  flex-shrink: 0;
+  height: 1.25em;
+  place-items: center;
+  width: 1.25em;
+}
+
+.omenu__icon svg {
+  display: block;
+  height: 1.1em;
+  width: 1.1em;
+}
+
+.omenu__label {
+  flex: 1;
+  font-size: 0.95em;
+  font-weight: 500;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.omenu__desc {
+  color: rgb(var(--rgb-panel-white) / 0.4);
+  font-size: 0.72em;
+  margin-inline-start: auto;
+  max-width: 9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.omenu__chevron {
+  color: rgb(var(--rgb-panel-white) / 0.35);
+  flex-shrink: 0;
+  font-size: 0.85em;
+}
+
+.omenu__empty {
+  color: rgb(var(--rgb-panel-white) / 0.45);
+  font-size: 0.9em;
+  padding: 1.25em 0.85em;
+  text-align: center;
+}
+
+.omenu__footer {
+  border-top: var(--border-width) solid rgb(var(--rgb-panel-white) / 0.1);
+  color: rgb(var(--rgb-panel-white) / 0.35);
+  display: flex;
+  font-size: 0.72em;
+  gap: var(--space-medium);
+  justify-content: space-between;
+  padding: 0.55em 0.85em;
+}
+
+.omenu__footer kbd {
+  background: rgb(var(--rgb-panel-white) / 0.08);
+  border-radius: 0.25em;
+  color: rgb(var(--rgb-panel-white) / 0.55);
+  font: inherit;
+  padding: 0.1em 0.35em;
+}
+
+.omenu-fallback {
+  display: none;
+}
+
+.no-js .omenu-fallback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-small);
+  justify-content: center;
+  list-style: none;
+  margin: var(--space-large) auto;
+  max-width: var(--width-text);
+  padding: 0 var(--space-large);
+}
+
+.no-js .omenu-fallback a {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0.4em;
+  color: var(--color-terminal-white);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  padding: 0.45em 0.75em;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .omenu__item:hover {
+    background: rgb(var(--rgb-panel-accent) / 0.12);
+  }
+}
+
+@media (max-width: 34em) {
+  .omenu__shell {
+    padding-top: 4em;
+  }
+
+  .omenu__desc {
+    display: none;
+  }
+
+  .omenu__footer {
+    display: none;
+  }
+}
